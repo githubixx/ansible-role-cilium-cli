@@ -1,0 +1,46 @@
+---
+- name: Downloading cilium CLI archive
+  get_url:
+    url: "{{ cilium_cli_url }}"
+    dest: "{{ cilium_cli_tmp_directory }}/{{ cilium_cli_archive }}"
+    checksum: "sha256:{{ cilium_cli_url }}.sha256sum"
+  tags:
+    - download
+
+- name: Unarchive cilium CLI
+  unarchive:
+    src: "{{ cilium_cli_tmp_directory }}/{{ cilium_cli_archive }}"
+    dest: "{{ cilium_cli_tmp_directory }}"
+    remote_src: true
+  tags:
+    - unarchive
+
+- name: Copy cilium cli binary to destination directory
+  copy:
+    src: "{{ cilium_cli_tmp_directory }}/{{ item }}"
+    dest: "{{ cilium_cli_bin_directory }}/{{ item }}"
+    mode: "{{ cilium_cli_binary_mode }}"
+    owner: "{{ cilium_cli_owner }}"
+    group: "{{ cilium_cli_group }}"
+    remote_src: true
+  with_items:
+    - cilium
+  tags:
+    - install
+  when:
+    - cilium_cli_owner is defined
+    - cilium_cli_group is defined
+
+- name: Copy cilium cli binary to destination directory
+  copy:
+    src: "{{ cilium_cli_tmp_directory }}/{{ item }}"
+    dest: "{{ cilium_cli_bin_directory }}/{{ item }}"
+    mode: "{{ cilium_cli_binary_mode }}"
+    remote_src: true
+  with_items:
+    - cilium
+  tags:
+    - install
+  when:
+    - cilium_cli_owner is not defined
+    - cilium_cli_group is not defined
