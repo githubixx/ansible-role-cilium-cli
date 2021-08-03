@@ -1,0 +1,39 @@
+galaxy_info:
+  author: Robert Wimmer
+  description: Installs cilium command line utility.
+  license: GPLv3
+  min_ansible_version: 2.9
+  role_name: cilium_cli
+  namespace: githubixx
+  platforms:
+    - name: ArchLinux
+    - name: Ubuntu
+      versions:
+        - bionic
+        - focal
+    - name: Debian
+      versions:
+        - buster
+    - name: Fedora
+      versions:
+        - 33
+        - 34
+    - name: EL
+      versions:
+        - 7
+        - 8
+    - name: opensuse
+      versions:
+        - 15.2
+  galaxy_tags:
+    - kubernetes
+    - kubectl
+    - k8s
+    - cli
+    - cilium
+    - network
+    - networking
+    - bpf
+    - ebpf
+    - hubble
+    - observability
