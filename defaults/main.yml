@@ -1,6 +1,6 @@
 ---
 # "cilium" CLI version to install
-cilium_cli_version: "0.8.5"
+cilium_cli_version: "0.8.6"
 
 # Where to install "cilium" binary. By default that's ".local/bin" in the
 # users $HOME directory.
