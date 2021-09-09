@@ -1,6 +1,10 @@
 Changelog
 ---------
 
+**1.1.0+0.9.0**
+
+- update to Cilium CLI `v0.9.0`
+
 **1.0.1+0.8.6**
 
 - update to Cilium CLI `v0.8.6`
