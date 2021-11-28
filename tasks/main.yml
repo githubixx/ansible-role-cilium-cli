@@ -15,6 +15,19 @@
   tags:
     - unarchive
 
+- name: Ensure destination directory
+  file:
+    path: "{{ cilium_cli_bin_directory }}"
+    state: directory
+    mode: "{{ cilium_cli_bin_directory_mode }}"
+    owner: "{{ cilium_cli_bin_directory_owner }}"
+    group: "{{ cilium_cli_bin_directory_group }}"
+  tags:
+    - install
+  when:
+    - cilium_cli_bin_directory_owner is defined
+    - cilium_cli_bin_directory_group is defined
+
 - name: Copy cilium cli binary to destination directory
   copy:
     src: "{{ cilium_cli_tmp_directory }}/{{ item }}"
@@ -27,20 +40,3 @@
     - cilium
   tags:
     - install
-  when:
-    - cilium_cli_owner is defined
-    - cilium_cli_group is defined
-
-- name: Copy cilium cli binary to destination directory
-  copy:
-    src: "{{ cilium_cli_tmp_directory }}/{{ item }}"
-    dest: "{{ cilium_cli_bin_directory }}/{{ item }}"
-    mode: "{{ cilium_cli_binary_mode }}"
-    remote_src: true
-  with_items:
-    - cilium
-  tags:
-    - install
-  when:
-    - cilium_cli_owner is not defined
-    - cilium_cli_group is not defined
