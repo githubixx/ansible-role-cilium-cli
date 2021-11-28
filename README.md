@@ -21,19 +21,29 @@ Role Variables
 # "cilium" CLI version to install
 cilium_cli_version: "0.9.3"
 
-# Where to install "cilium" binary. By default that's ".local/bin" in the
-# users $HOME directory.
-cilium_cli_bin_directory: "{{ '~/.local/bin' | expanduser }}"
+# Where to install "cilium" binary. This directory will only be created if
+# "cilium_cli_bin_directory_owner" and "cilium_cli_bin_directory_group variables
+# are also defined! Otherwise it will be assumend that the destination directory
+# already exits with proper permissions.
+cilium_cli_bin_directory: "/usr/local/bin"
 
-# Directory to store the cilium cli archive
+# If the "cilium" binary should be placed in a directory that doesn't exist yet,
+# this two variables have to be specified to set owner and group of that new
+# directory accordingly.
+# cilium_cli_bin_directory_owner: "root"
+# cilium_cli_bin_directory_group: "root"
+
+# Specifies the permissions of the destination directory.
+cilium_cli_bin_directory_mode: "0755"
+
+# Directory to store the cilium cli archive.
 cilium_cli_tmp_directory: "{{ lookup('env', 'TMPDIR') | default('/tmp',true) }}"
 
-# Owner/group of "cilium" binary. Both variables are commented by default.
-# In this case the resulting binary will be owned by the current user.
-#cilium_cli_owner: "root"
-#cilium_cli_group: "root"
+# Owner/group of "cilium" binary.
+cilium_cli_owner: "root"
+cilium_cli_group: "root"
 
-# Specifies the permissions of the "cilium" binary
+# Specifies the permissions of the "cilium" binary.
 cilium_cli_binary_mode: "0755"
 
 # Operarting system on which "cilium" should run on.
@@ -44,10 +54,10 @@ cilium_cli_os: "linux"
 # Other possible values: "386","arm64","arm"
 cilium_cli_arch: "amd64"
 
-# Name of the archive file name
+# Name of the archive file name.
 cilium_cli_archive: "cilium-{{ cilium_cli_os }}-{{ cilium_cli_arch }}.tar.gz"
 
-# The cilium CLI download URL (normally no need to change it)
+# The cilium CLI download URL (normally no need to change it).
 cilium_cli_url: "https://github.com/cilium/cilium-cli/releases/download/v{{ cilium_cli_version }}/{{ cilium_cli_archive }}"
 ```
 
@@ -71,6 +81,25 @@ Example 2 (assign tag to role):
     -
       role: githubixx.cilium_cli
       tags: role-cilium-cli
+```
+
+Testing
+-------
+
+This role has a small test setup that is created using [Molecule](https://github.com/ansible-community/molecule), libvirt (vagrant-libvirt) and QEMU/KVM. Please see my blog post [Testing Ansible roles with Molecule, libvirt (vagrant-libvirt) and QEMU/KVM](https://www.tauceti.blog/posts/testing-ansible-roles-with-molecule-libvirt-vagrant-qemu-kvm/) how to setup. The test configuration is [here](https://github.com/githubixx/ansible-role-cilium-cli/tree/master/molecule/default).
+
+Afterwards molecule can be executed:
+
+```bash
+molecule converge
+```
+
+This will setup a few virtual machines (VM) with different supported Linux operating systems and installs `cilium_cli` role.
+
+To clean up run
+
+```bash
+molecule destroy
 ```
 
 License
