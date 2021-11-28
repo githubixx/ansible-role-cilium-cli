@@ -19,7 +19,7 @@ Role Variables
 ```yaml
 ---
 # "cilium" CLI version to install
-cilium_cli_version: "0.9.2"
+cilium_cli_version: "0.9.3"
 
 # Where to install "cilium" binary. By default that's ".local/bin" in the
 # users $HOME directory.
