@@ -1,9 +1,15 @@
 Changelog
 ---------
 
-**1.2.1+0.9.3**
+**2.0.0+0.9.3**
 
-- update to Cilium CLI `v0.9.3`
+- Set `cilium_cli_version` to `0.9.3`
+- Changed default for `cilium_cli_bin_directory` from `~/.local/bin` to `/usr/local/bin`
+- Introduced `cilium_cli_bin_directory_owner`
+- Introduced `cilium_cli_bin_directory_group`
+- Introduced `cilium_cli_bin_directory_mode`
+- Changed default for `cilium_cli_owner` to `root`
+- Changed default for `cilium_cli_group` to `root`
 
 **1.2.0+0.9.2**
 
