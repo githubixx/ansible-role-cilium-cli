@@ -11,8 +11,8 @@ cilium_cli_tmp_directory: "{{ lookup('env', 'TMPDIR') | default('/tmp',true) }}"
 
 # Owner/group of "cilium" binary. Both variables are commented by default.
 # In this case the resulting binary will be owned by the current user.
-#cilium_cli_owner: "root"
-#cilium_cli_group: "root"
+# cilium_cli_owner: "root"
+# cilium_cli_group: "root"
 
 # Specifies the permissions of the "cilium" binary
 cilium_cli_binary_mode: "0755"
