@@ -1,0 +1,48 @@
+---
+# Copyright (C) 2021 Robert Wimmer
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+- hosts: all
+  remote_user: vagrant
+  become: true
+  gather_facts: true
+  tasks:
+    - block:
+      - name: (Archlinux) Init pacman
+        raw: |
+          pacman-key --init
+          pacman-key --populate archlinux
+        changed_when: false
+        ignore_errors: true
+
+      - name: (Archlinux) Update pacman cache
+        pacman:
+          update_cache: yes
+        changed_when: false
+      when: ansible_distribution|lower == 'archlinux'
+
+    - name: (Ubuntu) Update APT package cache
+      apt:
+        update_cache: "true"
+        cache_valid_time: 3600
+      when: ansible_distribution|lower == 'ubuntu'
+
+- hosts: test-cilium-cli-arch
+  vars_files:
+    - vars/archlinux.yml
+  remote_user: vagrant
+  become: true
+  gather_facts: true
+  tasks:
+    - name: Include cilium_cli role
+      include_role:
+        name: githubixx.cilium_cli
+
+- hosts: test-cilium-cli-ubuntu2004
+  remote_user: vagrant
+  become: true
+  gather_facts: true
+  tasks:
+    - name: Include cilium_cli role
+      include_role:
+        name: githubixx.cilium_cli

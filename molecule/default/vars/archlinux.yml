@@ -1,0 +1,6 @@
+---
+cilium_cli_bin_directory: "/home/vagrant/.local/bin"
+cilium_cli_owner: "vagrant"
+cilium_cli_group: "vagrant"
+cilium_cli_bin_directory_owner: "vagrant"
+cilium_cli_bin_directory_group: "vagrant"
