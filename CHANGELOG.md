@@ -1,6 +1,10 @@
 Changelog
 ---------
 
+**2.3.0+0.12.3**
+
+- Set `cilium_cli_version` to `0.12.3`
+
 **2.2.2+0.11.9**
 
 - Set `cilium_cli_version` to `0.11.9`
