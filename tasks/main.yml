@@ -1,6 +1,6 @@
 ---
 - name: Downloading cilium CLI archive
-  get_url:
+  ansible.builtin.get_url:
     url: "{{ cilium_cli_url }}"
     dest: "{{ cilium_cli_tmp_directory }}/{{ cilium_cli_archive }}"
     checksum: "sha256:{{ cilium_cli_url }}.sha256sum"
@@ -8,7 +8,7 @@
     - download
 
 - name: Unarchive cilium CLI
-  unarchive:
+  ansible.builtin.unarchive:
     src: "{{ cilium_cli_tmp_directory }}/{{ cilium_cli_archive }}"
     dest: "{{ cilium_cli_tmp_directory }}"
     remote_src: true
@@ -16,7 +16,7 @@
     - unarchive
 
 - name: Ensure destination directory
-  file:
+  ansible.builtin.file:
     path: "{{ cilium_cli_bin_directory }}"
     state: directory
     mode: "{{ cilium_cli_bin_directory_mode }}"
@@ -29,7 +29,7 @@
     - cilium_cli_bin_directory_group is defined
 
 - name: Copy cilium cli binary to destination directory
-  copy:
+  ansible.builtin.copy:
     src: "{{ cilium_cli_tmp_directory }}/{{ item }}"
     dest: "{{ cilium_cli_bin_directory }}/{{ item }}"
     mode: "{{ cilium_cli_binary_mode }}"
