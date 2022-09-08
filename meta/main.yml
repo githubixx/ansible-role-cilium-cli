@@ -1,8 +1,9 @@
+---
 galaxy_info:
   author: Robert Wimmer
   description: Installs cilium command line utility.
   license: GPLv3
-  min_ansible_version: 2.9
+  min_ansible_version: "2.9"
   role_name: cilium_cli
   namespace: githubixx
   platforms:
