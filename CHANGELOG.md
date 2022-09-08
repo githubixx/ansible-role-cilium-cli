@@ -1,6 +1,15 @@
 Changelog
 ---------
 
+**2.3.0+0.12.3**
+
+- Set `cilium_cli_version` to `0.12.3`
+- `tasks/main.yml`: add mode for `get_url` task
+- `tasks/main.yml`: use FQDN Ansible module names
+- `meta/main.yml`: platform versions values should be string
+- `defaults/main.yml`: ansible-lint
+- `meta/main.yml`: `min_ansible_version` value should be string
+
 **2.2.2+0.11.9**
 
 - Set `cilium_cli_version` to `0.11.9`

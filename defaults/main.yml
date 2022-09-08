@@ -1,6 +1,6 @@
 ---
 # "cilium" CLI version to install
-cilium_cli_version: "0.11.9"
+cilium_cli_version: "0.12.3"
 
 # Where to install "cilium" binary. This directory will only be created if
 # "cilium_cli_bin_directory_owner" and "cilium_cli_bin_directory_group variables
@@ -18,7 +18,7 @@ cilium_cli_bin_directory: "/usr/local/bin"
 cilium_cli_bin_directory_mode: "0755"
 
 # Directory to store the cilium cli archive.
-cilium_cli_tmp_directory: "{{ lookup('env', 'TMPDIR') | default('/tmp',true) }}"
+cilium_cli_tmp_directory: "{{ lookup('env', 'TMPDIR') | default('/tmp', true) }}"
 
 # Owner/group of "cilium" binary.
 cilium_cli_owner: "root"
