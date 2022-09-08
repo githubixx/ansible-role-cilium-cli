@@ -18,7 +18,7 @@ cilium_cli_bin_directory: "/usr/local/bin"
 cilium_cli_bin_directory_mode: "0755"
 
 # Directory to store the cilium cli archive.
-cilium_cli_tmp_directory: "{{ lookup('env', 'TMPDIR') | default('/tmp',true) }}"
+cilium_cli_tmp_directory: "{{ lookup('env', 'TMPDIR') | default('/tmp', true) }}"
 
 # Owner/group of "cilium" binary.
 cilium_cli_owner: "root"
