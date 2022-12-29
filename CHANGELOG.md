@@ -1,6 +1,13 @@
 Changelog
 ---------
 
+**2.4.0+0.12.11**
+
+- Set `cilium_cli_version` to `0.12.11`
+- add Github release action to push new release to Ansible Galaxy
+- add `.yamllint`
+- add `verify` for Molecule tests
+
 **2.3.0+0.12.3**
 
 - Set `cilium_cli_version` to `0.12.3`
