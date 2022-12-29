@@ -19,7 +19,7 @@ Role Variables
 ```yaml
 ---
 # "cilium" CLI version to install
-cilium_cli_version: "0.12.3"
+cilium_cli_version: "0.12.11"
 
 # Where to install "cilium" binary. This directory will only be created if
 # "cilium_cli_bin_directory_owner" and "cilium_cli_bin_directory_group variables
@@ -95,6 +95,12 @@ molecule converge
 ```
 
 This will setup a few virtual machines (VM) with different supported Linux operating systems and installs `cilium_cli` role.
+
+To run a small test if `cilium` command was successfully install run:
+
+```bash
+molecule verify
+```
 
 To clean up run
 
