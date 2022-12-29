@@ -7,25 +7,27 @@
   become: true
   gather_facts: true
   tasks:
-    - block:
-      - name: (Archlinux) Init pacman
-        raw: |
-          pacman-key --init
-          pacman-key --populate archlinux
-        changed_when: false
-        ignore_errors: true
+    - name: Update pacman cache for Archlinux
+      when:
+        - ansible_distribution | lower == 'archlinux'
+      block:
+        - name: (Archlinux) Init pacman
+          raw: |
+            pacman-key --init
+            pacman-key --populate archlinux
+          changed_when: false
+          ignore_errors: true
 
-      - name: (Archlinux) Update pacman cache
-        pacman:
-          update_cache: yes
-        changed_when: false
-      when: ansible_distribution|lower == 'archlinux'
+        - name: (Archlinux) Update pacman cache
+          pacman:
+            update_cache: true
+          changed_when: false
 
     - name: (Ubuntu) Update APT package cache
+      when: ansible_distribution | lower == 'ubuntu'
       apt:
-        update_cache: "true"
+        update_cache: true
         cache_valid_time: 3600
-      when: ansible_distribution|lower == 'ubuntu'
 
 - hosts: test-cilium-cli-arch
   vars_files:
