@@ -19,7 +19,7 @@ Role Variables
 ```yaml
 ---
 # "cilium" CLI version to install
-cilium_cli_version: "0.12.3"
+cilium_cli_version: "0.12.11"
 
 # Where to install "cilium" binary. This directory will only be created if
 # "cilium_cli_bin_directory_owner" and "cilium_cli_bin_directory_group variables
