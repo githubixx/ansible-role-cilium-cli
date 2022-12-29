@@ -96,6 +96,12 @@ molecule converge
 
 This will setup a few virtual machines (VM) with different supported Linux operating systems and installs `cilium_cli` role.
 
+To run a small test if `cilium` command was successfully install run:
+
+```bash
+molecule verify
+```
+
 To clean up run
 
 ```bash
