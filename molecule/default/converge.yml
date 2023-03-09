@@ -2,29 +2,31 @@
 # Copyright (C) 2021 Robert Wimmer
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-- hosts: all
+- hosts: test-cilium-cli-arch
+  remote_user: vagrant
+  become: true
+  gather_facts: false
+  tasks:
+    - name: Init pacman
+      ansible.builtin.raw: |
+        pacman-key --init
+        pacman-key --populate archlinux
+      changed_when: false
+      failed_when: false
+
+    - name: Install Python
+      ansible.builtin.raw: |
+        pacman -S --noconfirm python
+      args:
+        executable: /bin/bash
+      changed_when: false
+
+- hosts: test-cilium-cli-ubuntu2004
   remote_user: vagrant
   become: true
   gather_facts: true
   tasks:
-    - name: Update pacman cache for Archlinux
-      when:
-        - ansible_distribution | lower == 'archlinux'
-      block:
-        - name: (Archlinux) Init pacman
-          raw: |
-            pacman-key --init
-            pacman-key --populate archlinux
-          changed_when: false
-          ignore_errors: true
-
-        - name: (Archlinux) Update pacman cache
-          pacman:
-            update_cache: true
-          changed_when: false
-
-    - name: (Ubuntu) Update APT package cache
-      when: ansible_distribution | lower == 'ubuntu'
+    - name: Update APT package cache
       apt:
         update_cache: true
         cache_valid_time: 3600
