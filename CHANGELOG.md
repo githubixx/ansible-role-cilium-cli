@@ -4,7 +4,7 @@ Changelog
 **2.6.0+0.13.2**
 
 - set `cilium_cli_version` to `0.13.2`
-- add molecule/default/prepare.yml and move tasks from molecule/default/converge.yml
+- add `molecule/default/prepare.yml` and move tasks from `molecule/default/converge.yml`
 
 **2.5.0+0.13.1**
 
