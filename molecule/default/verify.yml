@@ -2,7 +2,7 @@
 - name: Verify setup
   hosts: all
   vars:
-    expected_output: "v0.13"
+    expected_output: "v0.14"
   tasks:
     - name: Execute cilium version to capture output
       ansible.builtin.command:
