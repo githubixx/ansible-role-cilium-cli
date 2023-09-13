@@ -1,6 +1,12 @@
 Changelog
 ---------
 
+**2.7.0+0.15.8**
+
+- set `cilium_cli_version` to `0.15.8`
+- add Molecule test for Ubuntu 22.04
+- `molecule/default/molecule.yml`: move `memory` and `cpus` options to instances
+
 **2.7.0+0.14.6**
 
 - set `cilium_cli_version` to `0.14.6`

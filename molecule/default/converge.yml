@@ -13,7 +13,7 @@
       include_role:
         name: githubixx.cilium_cli
 
-- hosts: test-cilium-cli-ubuntu2004
+- hosts: test-cilium-cli-ubuntu2004, test-cilium-cli-ubuntu2204
   remote_user: vagrant
   become: true
   gather_facts: true
