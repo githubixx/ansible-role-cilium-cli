@@ -2,7 +2,8 @@
 # Copyright (C) 2023 Robert Wimmer
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-- hosts: test-cilium-cli-arch
+- name: Setup Archlinux hosts
+  hosts: test-cilium-cli-arch
   vars_files:
     - vars/archlinux.yml
   remote_user: vagrant
@@ -10,14 +11,15 @@
   gather_facts: true
   tasks:
     - name: Include cilium_cli role
-      include_role:
+      ansible.builtin.include_role:
         name: githubixx.cilium_cli
 
-- hosts: test-cilium-cli-ubuntu2004, test-cilium-cli-ubuntu2204
+- name: Setup Ubuntu hosts
+  hosts: test-cilium-cli-ubuntu2004, test-cilium-cli-ubuntu2204
   remote_user: vagrant
   become: true
   gather_facts: true
   tasks:
     - name: Include cilium_cli role
-      include_role:
+      ansible.builtin.include_role:
         name: githubixx.cilium_cli
