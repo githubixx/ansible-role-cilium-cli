@@ -4,6 +4,9 @@ Changelog
 **2.8.0+0.16.4**
 
 - set `cilium_cli_version` to `0.16.4`
+- update Github workflow
+- Molecule: fix various ansible-lint issues
+- Molecule: change IP addresses
 
 **2.7.0+0.15.8**
 
