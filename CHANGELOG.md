@@ -3,6 +3,7 @@
 ## 2.8.1+0.16.19
 
 - set `cilium_cli_version` to `0.16.19`
+- update `.yamllint`
 
 ## 2.8.0+0.16.4
 
