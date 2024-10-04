@@ -1,20 +1,16 @@
-ansible-role-cilium-cli
-=======================
+# ansible-role-cilium-cli
 
 Installs [cilium command line](https://github.com/cilium/cilium-cli/) utility.
 
-Versions
---------
+## Versions
 
-I tag every release and try to stay with [semantic versioning](http://semver.org). If you want to use the role I recommend to checkout the latest tag. The master branch is basically development while the tags mark stable releases. But in general I try to keep master in good shape too. A tag `2.3.0+0.12.3` means this is release `2.3.0` of this role and it uses `cilium` CLI version `0.12.3`. If the role itself changes `X.Y.Z` before `+` will increase. If the `cilium` CLI version changes `X.Y.Z` after `+` will increase too. This allows to tag bugfixes and new major versions of the role while it's still developed for a specific `cilium` CLI release.
+I tag every release and try to stay with [semantic versioning](http://semver.org). If you want to use the role I recommend to checkout the latest tag. The master branch is basically development while the tags mark stable releases. But in general I try to keep master in good shape too. A tag `2.8.1+0.16.19` means this is release `2.8.1` of this role and it uses `cilium` CLI version `0.16.19`. If the role itself changes `X.Y.Z` before `+` will increase. If the `cilium` CLI version changes `X.Y.Z` after `+` will increase too. This allows to tag bugfixes and new major versions of the role while it's still developed for a specific `cilium` CLI release.
 
-Changelog
----------
+## Changelog
 
 see [CHANGELOG.md](https://github.com/githubixx/ansible-role-cilium-cli/blob/master/CHANGELOG.md)
 
-Role Variables
---------------
+## Role Variables
 
 ```yaml
 ---
@@ -61,8 +57,7 @@ cilium_cli_archive: "cilium-{{ cilium_cli_os }}-{{ cilium_cli_arch }}.tar.gz"
 cilium_cli_url: "https://github.com/cilium/cilium-cli/releases/download/v{{ cilium_cli_version }}/{{ cilium_cli_archive }}"
 ```
 
-Example Playbook
-----------------
+## Example Playbook
 
 Example 1 (without role tag):
 
@@ -83,8 +78,7 @@ Example 2 (assign tag to role):
       tags: role-cilium-cli
 ```
 
-Testing
--------
+## Testing
 
 This role has a small test setup that is created using [Molecule](https://github.com/ansible-community/molecule), libvirt (vagrant-libvirt) and QEMU/KVM. Please see my blog post [Testing Ansible roles with Molecule, libvirt (vagrant-libvirt) and QEMU/KVM](https://www.tauceti.blog/posts/testing-ansible-roles-with-molecule-libvirt-vagrant-qemu-kvm/) how to setup. The test configuration is [here](https://github.com/githubixx/ansible-role-cilium-cli/tree/master/molecule/default).
 
@@ -108,12 +102,10 @@ To clean up run
 molecule destroy
 ```
 
-License
--------
+## License
 
 GNU GENERAL PUBLIC LICENSE Version 3
 
-Author Information
-------------------
+## Author Information
 
 [http://www.tauceti.blog](http://www.tauceti.blog)
