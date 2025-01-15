@@ -15,7 +15,7 @@ see [CHANGELOG.md](https://github.com/githubixx/ansible-role-cilium-cli/blob/mas
 ```yaml
 ---
 # "cilium" CLI version to install
-cilium_cli_version: "0.16.19"
+cilium_cli_version: "0.16.23"
 
 # Where to install "cilium" binary. This directory will only be created if
 # "cilium_cli_bin_directory_owner" and "cilium_cli_bin_directory_group variables
