@@ -1,5 +1,15 @@
 # Changelog
 
+## 3.0.0+0.18.5
+
+- set `cilium_cli_version` to `0.18.5`
+- Molecule: Use `generic/arch` Vagrant box instead of `archlinux/archlinux` (no longer available)
+- Molecule: add Ubuntu 24.04 / add host groups / install `openssl` and `archlinux-keyring` packages for Archlinux
+- Molecule: `verify.yml` change expected_output value
+- Removed Ubuntu 20.04 because reached end of life
+- add `.gitignore`
+- update `meta/main.yml`
+
 ## 2.8.2+0.16.23
 
 - set `cilium_cli_version` to `0.16.23`
