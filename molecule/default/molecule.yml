@@ -24,7 +24,7 @@ platforms:
         type: static
         ip: 172.16.10.20
   - name: test-cilium-cli-ubuntu2204
-    box: alvistack/ubuntu2204
+    box: alvistack/ubuntu-22.04
     memory: 2048
     cpus: 2
     groups:
@@ -34,7 +34,7 @@ platforms:
         network_name: private_network
         type: static
         ip: 172.16.10.30
-  - name: test-docker-ubuntu2404
+  - name: test-cilium-cli-ubuntu2404
     box: alvistack/ubuntu-24.04
     memory: 2048
     cpus: 2
