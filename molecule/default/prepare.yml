@@ -1,5 +1,5 @@
 ---
-# Copyright (C) 2023 Robert Wimmer
+# Copyright (C) 2025 Robert Wimmer
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 - name: Setup Archlinux hosts
@@ -30,7 +30,7 @@
       changed_when: false
 
 - name: Setup Ubuntu hosts
-  hosts: test-cilium-cli-ubuntu2004, test-cilium-cli-ubuntu2204
+  hosts: test-cilium-cli-ubuntu2204
   remote_user: vagrant
   become: true
   gather_facts: true

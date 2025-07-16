@@ -1,5 +1,5 @@
 ---
-# Copyright (C) 2021 Robert Wimmer
+# Copyright (C) 2025 Robert Wimmer
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 dependency:
@@ -12,15 +12,6 @@ driver:
     type: libvirt
 
 platforms:
-  - name: test-cilium-cli-ubuntu2004
-    box: generic/ubuntu2004
-    memory: 2048
-    cpus: 2
-    interfaces:
-      - auto_config: true
-        network_name: private_network
-        type: static
-        ip: 172.16.10.10
   - name: test-cilium-cli-arch
     box: archlinux/archlinux
     memory: 2048
