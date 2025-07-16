@@ -13,7 +13,7 @@ driver:
 
 platforms:
   - name: test-cilium-cli-arch
-    box: archlinux/archlinux
+    box: generic/arch
     memory: 2048
     cpus: 2
     groups:
