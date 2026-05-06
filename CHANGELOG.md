@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.1.0+0.19.2
+
+- set `cilium_cli_version` to `0.19.2`
+- update `meta/main.yml`
+- Molecule: use own `githubixx` Vagrant boxes
+- Molecule: `verify.yml` change `expected_output` value / replace injected `ansible_*` facts usage
+- Molecule: update years
+- Molecule: add test for Ubuntu 26.04
+
 ## 3.0.0+0.18.5
 
 - set `cilium_cli_version` to `0.18.5`
