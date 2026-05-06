@@ -10,23 +10,24 @@ galaxy_info:
     - name: ArchLinux
     - name: Ubuntu
       versions:
-        - "focal"
         - "jammy"
+        - "noble"
+        - "resolute"
     - name: Debian
       versions:
         - "bullseye"
         - "bookworm"
+        - "trixie"
     - name: EL
       versions:
-        - "7"
-        - "8"
+        - "9"
+        - "10"
     - name: Fedora
       versions:
-        - "41"
-        - "42"
+        - "all"
     - name: opensuse
       versions:
-        - "15.5"
+        - "all"
   galaxy_tags:
     - kubernetes
     - kubectl
