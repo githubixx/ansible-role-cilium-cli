@@ -45,6 +45,17 @@ platforms:
         network_name: private_network
         type: static
         ip: 172.16.10.40
+  - name: test-cilium-cli-ubuntu2604
+    box: githubixx/ubuntu-26.04
+    memory: 2048
+    cpus: 2
+    groups:
+      - ubuntu
+    interfaces:
+      - auto_config: true
+        network_name: private_network
+        type: static
+        ip: 172.16.10.50
 
 provisioner:
   name: ansible
