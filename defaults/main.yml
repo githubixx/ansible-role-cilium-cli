@@ -1,6 +1,6 @@
 ---
 # "cilium" CLI version to install
-cilium_cli_version: "0.19.2"
+cilium_cli_version: "0.20.0"
 
 # Where to install "cilium" binary. This directory will only be created if
 # "cilium_cli_bin_directory_owner" and "cilium_cli_bin_directory_group variables
@@ -32,7 +32,7 @@ cilium_cli_binary_mode: "0755"
 cilium_cli_os: "linux"
 
 # Processor architecture "cilium" should run on.
-# Other possible values: "386","arm64","arm"
+# Other possible value: "arm64"
 cilium_cli_arch: "amd64"
 
 # Name of the archive file name.

@@ -4,7 +4,9 @@ Installs [cilium command line](https://github.com/cilium/cilium-cli/) utility.
 
 ## Versions
 
-I tag every release and try to stay with [semantic versioning](http://semver.org). If you want to use the role I recommend to checkout the latest tag. The master branch is basically development while the tags mark stable releases. But in general I try to keep master in good shape too. A tag `3.1.0+0.19.2` means this is release `3.1.0` of this role and it uses `cilium` CLI version `0.19.2`. If the role itself changes `X.Y.Z` before `+` will increase. If the `cilium` CLI version changes `X.Y.Z` after `+` will increase too. This allows to tag bugfixes and new major versions of the role while it's still developed for a specific `cilium` CLI release.
+I tag every release and try to stay with [semantic versioning](http://semver.org). If you want to use the role I recommend to checkout the latest tag. The master branch is basically development while the tags mark stable releases. But in general I try to keep master in good shape too. A tag `4.0.0+0.20.0` means this is release `4.0.0` of this role and it uses `cilium` CLI version `0.20.0`. If the role itself changes `X.Y.Z` before `+` will increase. If the `cilium` CLI version changes `X.Y.Z` after `+` will increase too. This allows to tag bugfixes and new major versions of the role while it's still developed for a specific `cilium` CLI release.
+
+The upstream [CLI compatibility table](https://github.com/cilium/cilium-cli/blob/v0.20.0/README.md#releases) lists Cilium 1.17 and newer for CLI 0.20.0. This role installs only the CLI; it does not upgrade Cilium in a cluster.
 
 ## Changelog
 
@@ -15,7 +17,7 @@ see [CHANGELOG.md](https://github.com/githubixx/ansible-role-cilium-cli/blob/mas
 ```yaml
 ---
 # "cilium" CLI version to install
-cilium_cli_version: "0.19.2"
+cilium_cli_version: "0.20.0"
 
 # Where to install "cilium" binary. This directory will only be created if
 # "cilium_cli_bin_directory_owner" and "cilium_cli_bin_directory_group variables
@@ -47,7 +49,7 @@ cilium_cli_binary_mode: "0755"
 cilium_cli_os: "linux"
 
 # Processor architecture "cilium" should run on.
-# Other possible values: "386","arm64","arm"
+# Other possible value: "arm64"
 cilium_cli_arch: "amd64"
 
 # Name of the archive file name.
