@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0+0.20.0
+
+- set `cilium_cli_version` to `0.20.0` (requires Cilium 1.17 or newer for CLI compatibility)
+- update supported architecture examples to match upstream release assets
+- Molecule: verify CLI version `v0.20.0` and run idempotence and verify during tests
+
 ## 3.1.0+0.19.2
 
 - set `cilium_cli_version` to `0.19.2`
