@@ -19,7 +19,7 @@ cilium_cli_version: "0.19.2"
 
 # Where to install "cilium" binary. This directory will only be created if
 # "cilium_cli_bin_directory_owner" and "cilium_cli_bin_directory_group variables
-# are also defined! Otherwise it will be assumend that the destination directory
+# are also defined! Otherwise it will be assumed that the destination directory
 # already exits with proper permissions.
 cilium_cli_bin_directory: "/usr/local/bin"
 
@@ -42,7 +42,7 @@ cilium_cli_group: "root"
 # Specifies the permissions of the "cilium" binary.
 cilium_cli_binary_mode: "0755"
 
-# Operarting system on which "cilium" should run on.
+# Operating system on which "cilium" should run on.
 # Use "darwin" for MacOS X
 cilium_cli_os: "linux"
 
