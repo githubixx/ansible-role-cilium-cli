@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.0.1+0.20.3
+
+- set `cilium_cli_version` to `0.20.3` (compatible with Cilium 1.17 and newer)
+- Molecule: verify CLI version `v0.20.3`
+- Upstream compatibility note: CLI 0.20.2 removes the deprecated BGP `v2alpha1` API; migrate BGP resources to `cilium.io/v2`
+- Upstream compatibility note: CLI 0.20.3 moves SPIRE Helm values from `authentication.mutual.spire` to `encryption.ztunnel.spire`
+
 ## 4.0.0+0.20.0
 
 - set `cilium_cli_version` to `0.20.0` (requires Cilium 1.17 or newer for CLI compatibility)
